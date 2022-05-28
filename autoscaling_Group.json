@@ -284,33 +284,7 @@
         ]
       }
     },
-    "MyAppDNS": {
-      "Type": "AWS::Route53::RecordSetGroup",
-      "Properties": {
-        "HostedZoneName": "jobassistonline.com.",
-        "Comment": "Zone apex alias targeted to myELB LoadBalancer.",
-        "RecordSets": [
-          {
-            "Name": "jobassistonline.com.",
-            "Type": "A",
-            "AliasTarget": {
-              "HostedZoneId": {
-                "Fn::GetAtt": [
-                  "MyAppElb",
-                  "CanonicalHostedZoneNameID"
-                ]
-              },
-              "DNSName": {
-                "Fn::GetAtt": [
-                  "MyAppElb",
-                  "DNSName"
-                ]
-              }
-            }
-          }
-        ]
-      }
-    },
+   
     "MyAppLaunchConfiguration": {
       "Type": "AWS::AutoScaling::LaunchConfiguration",
       "Properties": {
